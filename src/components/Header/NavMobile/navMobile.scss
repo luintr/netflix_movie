@@ -1,0 +1,109 @@
+@import '../../../styles/global.scss';
+
+.mobileNav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: .2s all ease-in-out;
+    transform: translateX(100%);
+    background: #000;
+    padding-top: 15%;
+    z-index: 100;
+
+    &.is-active {
+        transform: translateX(0%);
+    }
+
+    @include sm {
+        display: block;
+    }
+
+    .logo {
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 5%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .user {
+        display: flex;
+        justify-content: center;
+        gap: 40%;
+        width: 80%;
+        margin: 0 auto;
+        align-items: center;
+
+        .avatar {
+            width: 100%;
+
+            .ant-avatar {
+                @include size(50px, 50px);
+
+                .ant-avatar-string {
+                    font-size: 24px;
+                    line-height: 42px;
+                }
+            }
+
+            .authBtn {
+                display: flex;
+                justify-content: center;
+                gap: 10%;
+
+                .btn {
+                    cursor: pointer;
+                    background: #e87c03;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px 35px;
+                    border-radius: 25px;
+                    transition: 0.3s all ease-in-out;
+                    width: fit-content;
+                    box-sizing: border-box;
+
+                    span {
+                        font-size: var(--body18-fs);
+                        line-height: var(--body18-lh);
+                    }
+                }
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20%;
+
+            .btn {
+                @include size(50px, 50px);
+
+                svg {
+                    @include size(100%)
+                }
+            }
+        }
+    }
+
+    .navList {
+        text-align: center;
+        padding: 20% 0;
+        margin: 0 auto;
+
+        a {
+            display: block;
+            font-size: var(--h4-fs);
+            line-height: var(--h4-lh);
+            width: fit-content;
+            margin: 0 auto;
+            margin-bottom: 5%;
+        }
+    }
+}

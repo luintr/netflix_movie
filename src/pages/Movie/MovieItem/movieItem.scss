@@ -1,0 +1,123 @@
+@import '../../../styles/global.scss';
+
+.movieItem {
+    position: relative;
+    z-index: 2;
+    border-radius: 10px;
+    overflow: hidden;
+    .movieImg {
+        width: 100%;
+        height: 400px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include md {
+            height: 300px;
+        }
+    }
+
+    .boxInfo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        padding: 10%;
+        background: rgba($color: #000000, $alpha: .7);
+        transition: .2s all ease-in-out;
+        opacity: 0;
+
+        .title {
+            font-size: var(--body14-fs);
+            line-height: var(--body14-lh);
+            transition: .2s all ease-in-out;
+            transition-delay: .1s;
+            transform: translateY(-50%);
+            opacity: 0;
+        }
+
+        .date {
+            font-size: var(--body13-fs);
+            line-height: var(--body13-lh);
+            margin-bottom: 10px;
+            transition: .2s all ease-in-out;
+            transition-delay: .2s;
+            transform: translateY(-15%);
+            opacity: 0;
+        }
+
+        .progressCircle {
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+            transition: .2s all ease-in-out;
+            transition-delay: .2s;
+            transform: translateY(-10%);
+            opacity: 0;
+
+            .MuiCircularProgress-circle {
+                color: $err-cl;
+            }
+
+            .percentNumber {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: var(--body13-fs);
+                line-height: var(--body13-lh);
+            }
+        }
+    }
+
+    .navigateButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+        height: 15%;
+        transition: .2s all ease-in-out;
+
+        svg {
+            width: 100%;
+            height: 100%;
+
+            path {
+                fill: $err-cl;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: .7;
+        }
+    }
+
+    &:hover {
+        .boxInfo {
+            opacity: 1;
+
+            .title {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+
+            .date {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+
+            .progressCircle {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,300 @@
+@import '../../../styles/global.scss';
+
+
+
+.detailTV {
+    .detailBackdrop {
+        width: 100%;
+        height: 90vh;
+        position: relative;
+
+        img {
+            @include size(100%);
+            object-fit: cover;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            background: rgb(0, 0, 0, .4);
+            // background: linear-gradient(0deg, rgba(0, 0, 0, 0.5971638655462185) 0%, rgba(9, 36, 121, 0) 50%, rgba(0, 0, 0, 0.6027661064425771) 100%); // opacity: 0.8;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .boxInfo {
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+
+            .box-ttl {
+                font-size: var(--h1-fs);
+                line-height: var(--h1-lh);
+                font-weight: 800;
+                margin-bottom: 20px;
+            }
+
+            .flexDiv {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-bottom: 10px;
+
+                .progressCircle {
+                    position: relative;
+                    width: fit-content;
+                    height: fit-content;
+
+                    span {
+                        width: 40px !important;
+                        height: 40px !important;
+                    }
+
+                    .MuiCircularProgress-circle {
+                        color: $err-cl;
+                    }
+
+                    .percentNumber {
+                        position: absolute;
+                        top: 45%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: var(--body13-fs);
+                        line-height: var(--body13-lh);
+                    }
+                }
+
+                .type {
+                    display: flex;
+                    gap: 10px;
+                }
+            }
+
+            .lang {
+                display: flex;
+                gap: 10px;
+                margin-top: 20px;
+
+                .tag {
+                    padding: 2px 15px;
+                }
+            }
+
+            .content {
+                width: 50%;
+                text-align: justify;
+                overflow-wrap: anywhere;
+                @include overtext(8);
+            }
+
+            @include sm {
+                left: 3%;
+                width: 93%;
+
+                .flexDiv {
+                    .type {
+                        flex-wrap: wrap;
+                    }
+                }
+
+                .content {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .middleInfo {
+        position: relative;
+        z-index: 20;
+        width: 100%;
+        padding: 0 10%;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 50px;
+        margin-top: -12%;
+        margin-bottom: 2%;
+
+        .right {
+            width: 40%;
+
+            img {
+                @include size(100%);
+                object-fit: cover;
+            }
+        }
+
+        .left {
+            flex: 1;
+
+            .infoItem {
+                margin-top: 30px;
+
+                .lineTittle {
+                    margin-bottom: 20px;
+                }
+
+                .directorList {
+                    display: flex;
+                    gap: 10px;
+                    text-align: center;
+                    position: relative;
+
+                    .profileDirector {
+                        width: calc(100% / 4);
+                        overflow: hidden;
+                        border-radius: 10px;
+                        position: relative;
+
+                        img {
+                            @include size(100%);
+                            object-fit: cover;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            background: rgba($color: #000000, $alpha: .4);
+                        }
+                    }
+
+                    .profileName {
+                        font-size: var(--body13-fs);
+                        line-height: var(--body13-lh);
+                        width: 100%;
+                        text-align: center;
+                        position: absolute;
+                        bottom: 2%;
+                        left: 0;
+                    }
+                }
+
+                .productionList {
+                    display: flex;
+                    gap: 30px;
+
+                    .profileProduction {
+                        width: 30%;
+
+                        .productionImg {
+                            width: 100%;
+                            height: 5vw;
+                            margin-bottom: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                filter: brightness(0)invert(1);
+                                object-fit: cover;
+                            }
+                        }
+
+                        .profileName {
+                            text-align: center;
+                            font-size: var(--body13-fs);
+                            line-height: var(--body13-lh);
+                        }
+                    }
+                }
+            }
+        }
+
+        @include sm {
+            display: block;
+            padding: unset;
+            margin-top: -30%;
+
+            .right {
+                width: 70%;
+                margin: 0 auto;
+            }
+
+            .left {
+                .infoItem {
+                    .directorList {
+                        .profileDirector {
+                            width: calc(100% / 3 - 10px);
+                        }
+                    }
+
+                    .productionList {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottomDetail {
+        padding: 0 10%;
+
+        .seasonItem {
+            position: relative;
+
+            .box {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba($color: #000000, $alpha: .5);
+                transition: .3s all ease-in-out;
+                opacity: 0;
+
+                .title {
+                    position: absolute;
+                    top: 5%;
+                    left: 10%;
+                }
+
+                .seasonBtn {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
+                    transition: .3s all ease-in-out;
+
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &:hover {
+                .box {
+                    opacity: 1;
+
+                    .seasonBtn {
+                        &:hover {
+                            opacity: .8;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include sm {
+            padding: unset;
+        }
+    }
+}

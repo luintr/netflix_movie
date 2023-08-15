@@ -1,0 +1,275 @@
+@import '../../../styles/global.scss';
+
+.movieDetail {
+    .banner {
+        width: 100%;
+        height: 80vh;
+        position: relative;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            background: rgb(0, 0, 0);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5971638655462185) 0%, rgba(9, 36, 121, 0) 50%, rgba(0, 0, 0, 0.6027661064425771) 100%);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    .container {
+        margin-top: -20%;
+        position: relative;
+        z-index: 2;
+
+        .box {
+            .topInfo {
+                display: flex;
+                gap: 50px;
+                margin-bottom: 50px;
+
+                .infoImg {
+                    width: 40%;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .detail {
+                    flex: 1;
+                    cursor: context-menu;
+                    padding-top: 15px;
+
+                    .title {
+                        font-size: var(--h2-fs);
+                        line-height: var(--h2-lh);
+                        font-weight: bold;
+                        margin-bottom: 12px;
+                    }
+
+                    .date {
+                        font-size: var(--body24-fs);
+                        line-height: var(--body24-lh);
+                        margin-bottom: 12px;
+
+                        span {
+                            font-size: var(--body18-fs);
+                            line-height: var(--body18-lh);
+                        }
+                    }
+
+                    .flexDiv {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        margin-bottom: 30px;
+
+                        .progressCircle {
+                            position: relative;
+                            width: fit-content;
+                            height: fit-content;
+
+                            .MuiCircularProgress-circle {
+                                color: $err-cl;
+                            }
+
+                            .percentNumber {
+                                position: absolute;
+                                top: 40%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: var(--body13-fs);
+                                line-height: var(--body13-lh);
+                            }
+                        }
+
+                        .type {
+                            display: flex;
+                            gap: 10px;
+                        }
+                    }
+
+                    .movieDesc {
+                        text-align: justify;
+                        margin-bottom: 30px;
+                    }
+
+                    .buttonWatch {
+                        cursor: pointer;
+                        background: $err-cl;
+                        width: fit-content;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 10px 20px;
+                        border-radius: 25px;
+                        transition: .3s all ease-in-out;
+                        margin-bottom: 30px;
+
+                        svg {
+                            height: 30px;
+                            width: 30px;
+                        }
+
+                        &:hover {
+                            opacity: .8;
+                        }
+                    }
+                }
+            }
+
+            .related {
+                display: flex;
+                gap: 50px;
+
+                .left {
+                    width: 40%;
+
+                    .lineTitle {
+                        font-size: var(--h4-fs);
+                        line-height: var(--h4-lh);
+                        font-weight: 600;
+                        position: relative;
+                        width: fit-content;
+                        padding-right: 10px;
+                        margin-bottom: 20px;
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            background: $err-cl;
+                            height: 2px;
+                            width: 100%;
+                            bottom: 0;
+                            left: 0;
+                        }
+                    }
+
+                    .video {
+                        @include size(100%, 400px);
+
+                        iframe {
+                            @include size(100%, 100%);
+
+                        }
+                    }
+                }
+
+                .right {
+                    width: calc(60% - 50px);
+
+                    .lineTitle {
+                        font-size: var(--h4-fs);
+                        line-height: var(--h4-lh);
+                        font-weight: 600;
+                        position: relative;
+                        width: fit-content;
+                        padding-right: 10px;
+                        margin-bottom: 20px;
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            background: $err-cl;
+                            height: 2px;
+                            width: 100%;
+                            bottom: 0;
+                            left: 0;
+                        }
+                    }
+
+                    .swiper {
+                        padding-top: unset !important;
+                    }
+
+                    .no-content {
+                        font-size: var(--body18-fs);
+                        line-height: var(--body18-lh);
+                        color: $white-cl;
+                    }
+                }
+            }
+        }
+    }
+
+    @include sm {
+        .banner {
+            height: 60vh;
+        }
+
+        .container {
+            margin-top: -40%;
+
+            .box {
+                .topInfo {
+                    display: block;
+
+                    .infoImg {
+                        width: 70%;
+                        margin: 0 auto;
+                    }
+
+                    .detail {
+                        .flexDiv {
+                            .type {
+                                flex-wrap: wrap;
+                            }
+                        }
+
+                        .movieDesc {
+                            width: 100%;
+
+                        }
+
+                        .buttonWatch {
+                            width: 80%;
+                            margin: 0 auto;
+                            margin-bottom: 30px;
+                        }
+
+                        .actor {
+                            .castList {
+                                align-items: center;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                                gap: 20px;
+
+                                .castInfo {
+                                    width: calc(100% / 4);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .related {
+                    display: block;
+
+                    .left {
+                        width: 100%;
+
+                        .video {
+                            height: 40vh;
+                        }
+                    }
+
+                    .right {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

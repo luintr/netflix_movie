@@ -1,0 +1,71 @@
+@import "../../styles/global.scss";
+
+.separate {
+  height: 0.8rem;
+  background-color: $gray-cl;
+
+  @include sm {
+    height: .5rem;
+  }
+}
+
+.accordion {
+  background-color: $black-cl;
+  padding: 7.2rem;
+
+  @include sm {
+    padding: 5rem;
+  }
+
+  .ant-collapse {
+    border: none;
+    border-radius: unset;
+
+    .ant-collapse-item {
+      background-color: $gray-cl;
+      border-bottom: 0.1rem solid #000;
+      cursor: pointer;
+      padding: unset;
+      margin-bottom: .5rem;
+      border-radius: unset;
+
+      &:last-child {
+        margin-bottom: unset;
+      }
+
+      .ant-collapse-header {
+        width: 100%;
+        padding: 2rem 2.5rem;
+        display: flex;
+        align-items: center;
+
+        .ant-collapse-header-text {
+          font-size: var(--body24-fs);
+          line-height: var(--body24-lh);
+        }
+
+        @include sm {
+          padding: 1.5rem 2.5rem;
+        }
+      }
+
+      .ant-collapse-content {
+        background-color: $gray-cl;
+        border-top: 1px solid #000;
+
+        .ant-collapse-content-box {
+          padding: 2.5rem 4rem;
+
+          p {
+            font-size: var(--body18-fs);
+            line-height: var(--body18-lh);
+          }
+
+          @include sm {
+            padding: 1.5rem 4rem;
+          }
+        }
+      }
+    }
+  }
+}

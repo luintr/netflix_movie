@@ -1,0 +1,11 @@
+@import '../../styles/global.scss';
+
+.tag {
+    font-size: var(--body13-fs);
+    line-height: var(--body13-lh);
+    background: $err-cl;
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: context-menu;
+}

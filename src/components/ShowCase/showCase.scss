@@ -1,0 +1,103 @@
+@import "../../styles/global.scss";
+
+.wrapper {
+  @include flex(center, center);
+  padding-top: 8rem;
+  color: $white-cl;
+  z-index: 1;
+  background: url("../../assets/img/show-case-img.jpg") no-repeat center center/cover;
+  height: 100vh;
+  box-shadow: inset 50px 50px 150px black;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+
+  .content-wrapper {
+    max-width: 70%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      margin-bottom: 2rem;
+      font-size: var(--h2-fs);
+      line-height: var(--h2-lh);
+      font-weight: 800;
+    }
+
+    p {
+      margin-bottom: 2rem;
+      font-size: var(--body24-fs);
+      line-height: var(--body24-lh);
+
+      @include sm {
+        margin-bottom: 4rem
+      }
+    }
+
+    .sign-in-wrapper {
+      @include flex(center, center);
+      gap: 1rem;
+      height: 5rem;
+
+      input {
+        font-size: 1.6rem;
+        height: 100%;
+        outline: none;
+        border: 2px solid #7e7e7e;
+        border-radius: 0.5rem;
+        padding: 1rem 2rem;
+        overflow: hidden;
+        width: 38rem;
+        background-color: transparent;
+        color: $white-cl;
+        transition: $t ease-in;
+
+        &:hover {
+          border: 2px solid $white-cl;
+        }
+
+        &:focus {
+          border: 2px solid $white-cl;
+        }
+      }
+
+      button {
+        font-size: var(--body20-fs);
+        line-height: var(--body20-lh);
+        border-radius: 0.5rem;
+        border: none;
+        text-transform: capitalize;
+        width: 15rem;
+        padding: 0.5rem 0;
+        height: 100%;
+        outline: none;
+        cursor: pointer;
+        transition: $t linear;
+        background-color: $red-cl;
+        @include flex(center, center);
+        gap: 1rem;
+
+        &:hover {
+          background-color: rgb(192, 0, 0);
+        }
+      }
+
+      @include sm {
+        flex-wrap: wrap;
+
+        input {
+          width: 90%;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
