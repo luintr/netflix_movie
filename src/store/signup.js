@@ -1,22 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const signupFunc = createSlice({
-    name: 'signup',
+    name: "signup",
     initialState: {
         data: {
-            name: '',
-            usename: '',
-            password: ''
-        }
+            name: "",
+            username: "",
+            password: "",
+        },
     },
 
     reducers: {
         // isSignup(state) {
-
         // }
-    }
-})
+    },
+});
 
-export const signupActions = signupFunc.actions
+export const signupActions = signupFunc.actions;
 
-export default signupFunc
+export default signupFunc;
