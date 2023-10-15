@@ -1,4 +1,4 @@
-@import '../../../styles/global.scss';
+@import "../../../styles/global.scss";
 
 .mobileNav {
     display: none;
@@ -7,7 +7,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    transition: .2s all ease-in-out;
+    transition: 0.2s all ease-in-out;
     transform: translateX(100%);
     background: #000;
     padding-top: 15%;
@@ -86,7 +86,7 @@
                 @include size(50px, 50px);
 
                 svg {
-                    @include size(100%)
+                    @include size(100%);
                 }
             }
         }

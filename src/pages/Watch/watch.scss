@@ -1,4 +1,4 @@
-@import '../../styles/global.scss';
+@import "../../styles/global.scss";
 
 .movieVideo {
     width: 100%;
@@ -44,7 +44,7 @@
             border-radius: 7px;
             cursor: pointer;
             color: $black-cl;
-            transition: .2s all ease-in-out;
+            transition: 0.2s all ease-in-out;
             margin-bottom: 80px;
 
             &:hover {
@@ -67,7 +67,7 @@
 
             &::before {
                 position: absolute;
-                content: '';
+                content: "";
                 height: 100%;
                 width: 2px;
                 left: 0;

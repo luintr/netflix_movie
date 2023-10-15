@@ -1,6 +1,4 @@
-@import '../../../styles/global.scss';
-
-
+@import "../../../styles/global.scss";
 
 .detailTV {
     .detailBackdrop {
@@ -16,7 +14,7 @@
         &::before {
             position: absolute;
             content: "";
-            background: rgb(0, 0, 0, .4);
+            background: rgb(0, 0, 0, 0.4);
             // background: linear-gradient(0deg, rgba(0, 0, 0, 0.5971638655462185) 0%, rgba(9, 36, 121, 0) 50%, rgba(0, 0, 0, 0.6027661064425771) 100%); // opacity: 0.8;
             width: 100%;
             height: 100%;
@@ -159,14 +157,14 @@
 
                         &::before {
                             position: absolute;
-                            content: '';
+                            content: "";
                             width: 100%;
                             height: 100%;
                             top: 0;
                             left: 0;
                             bottom: 0;
                             right: 0;
-                            background: rgba($color: #000000, $alpha: .4);
+                            background: rgba($color: #000000, $alpha: 0.4);
                         }
                     }
 
@@ -199,7 +197,7 @@
                             img {
                                 width: 100%;
                                 height: 100%;
-                                filter: brightness(0)invert(1);
+                                filter: brightness(0) invert(1);
                                 object-fit: cover;
                             }
                         }
@@ -248,13 +246,13 @@
 
             .box {
                 position: absolute;
-                content: '';
+                content: "";
                 top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: rgba($color: #000000, $alpha: .5);
-                transition: .3s all ease-in-out;
+                background: rgba($color: #000000, $alpha: 0.5);
+                transition: 0.3s all ease-in-out;
                 opacity: 0;
 
                 .title {
@@ -271,7 +269,7 @@
                     width: 40px;
                     height: 40px;
                     cursor: pointer;
-                    transition: .3s all ease-in-out;
+                    transition: 0.3s all ease-in-out;
 
                     svg {
                         width: 100%;
@@ -286,7 +284,7 @@
 
                     .seasonBtn {
                         &:hover {
-                            opacity: .8;
+                            opacity: 0.8;
                         }
                     }
                 }

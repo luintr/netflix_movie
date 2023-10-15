@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
 import "./authpage.scss";
+
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import * as authServices from "../../services/authServices";
+
 import { Button, Checkbox, Form, Input, message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { loginActions } from "../../store/login";
-import { useNavigate } from "react-router-dom";
-import * as authServices from "../../services/authServices";
 
 const AuthPage = () => {
     const formState = useSelector((state) => state.login.formState);

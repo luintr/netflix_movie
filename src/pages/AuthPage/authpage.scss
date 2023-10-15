@@ -1,4 +1,4 @@
-@import '../../styles/global.scss';
+@import "../../styles/global.scss";
 
 .authPage {
     width: 100%;
@@ -112,9 +112,8 @@
 
                     span {
                         color: #8c8c8c;
-                        transition: .2s all ease-in-out;
+                        transition: 0.2s all ease-in-out;
                     }
-
 
                     &:hover {
                         .ant-checkbox-inner {
@@ -146,7 +145,7 @@
                         box-sizing: border-box;
                         height: unset;
                         background: $red-cl;
-                        transition: .2s all ease-in-out;
+                        transition: 0.2s all ease-in-out;
 
                         span {
                             font-size: var(--body16-fs);
@@ -155,7 +154,7 @@
                         }
 
                         &:hover {
-                            opacity: .8;
+                            opacity: 0.8;
                         }
                     }
                 }
