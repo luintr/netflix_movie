@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const signupFunc = createSlice({
+const func = createSlice({
     name: "signup",
     initialState: {
         data: {
@@ -16,6 +16,9 @@ const signupFunc = createSlice({
     },
 });
 
-export const signupActions = signupFunc.actions;
+const signup = {
+    func,
+    actions: func.actions,
+};
 
-export default signupFunc;
+export default signup;

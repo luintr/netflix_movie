@@ -1,6 +1,6 @@
-import hamburger from "./hamburger";
-import store from "./store";
-import singup from "./singup";
+import ham from "./hamburger";
+import signup from "./signup";
 import login from "./login";
+import store from "./store";
 
-export { hamburger, store, singup, login };
+export { ham, store, signup, login };

@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { LINKS } from "../../../constant";
+import { ham, login } from "../../../store";
 
 import { NetflixLogo } from "../../../assets/icon";
-import { loginActions } from "../../../store/login";
-import { hamActions } from "../../../store/hamburger";
 import Profile from "../../Profile";
 import NavMobile from "./Mobile";
 import Container from "../../Container";
@@ -22,13 +21,13 @@ const Header = () => {
     const hamburgerState = useSelector((state) => state.hamburger.isOpen);
 
     const changeStateAuth = () => {
-        dispatch(loginActions.changeForm());
+        dispatch(login.actions.changeForm());
     };
 
     const valueLogin = JSON.parse(localStorage.getItem("user"));
     useEffect(() => {
         if (valueLogin) {
-            dispatch(loginActions.setLoginTrue());
+            dispatch(login.actions.setLoginTrue());
         }
     }, [valueLogin, dispatch]);
 
@@ -73,7 +72,7 @@ const Header = () => {
                 <button
                     className={`hamburger hamburger--vortex ${hamburgerState ? "is-active" : ""}`}
                     type="button"
-                    onClick={() => dispatch(hamActions.isActive())}
+                    onClick={() => dispatch(ham.actions.isActive())}
                 >
                     <span className="hamburger-box">
                         <span className="hamburger-inner"></span>

@@ -7,7 +7,7 @@ import * as authServices from "../../services/authServices";
 
 import { Button, Checkbox, Form, Input, message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { loginActions } from "../../store/login";
+import { login } from "../../store";
 
 const Auth = () => {
     const formState = useSelector((state) => state.login.formState);
@@ -27,7 +27,7 @@ const Auth = () => {
 
     //Validate
     const onSignupFinish = async (value) => {
-        dispatch(loginActions.changeForm());
+        dispatch(login.actions.changeForm());
         navigate("/auth");
         messageApi.open({
             type: "success",
@@ -42,7 +42,7 @@ const Auth = () => {
             (item) => item.username.includes(value.username) && item.password.includes(value.password),
         );
         if (checkValue) {
-            dispatch(loginActions.isLogin());
+            dispatch(login.actions.isLogin());
             navigate("/movie");
             localStorage.setItem("user", JSON.stringify(checkValue));
         } else {
@@ -56,7 +56,7 @@ const Auth = () => {
 
     //showCaptchaPolicy
     const showCaptchaPolicy = () => setCaptcha(true);
-    const changeFormHandler = () => dispatch(loginActions.changeForm());
+    const changeFormHandler = () => dispatch(login.actions.changeForm());
 
     const SignInForm = () => {
         return (

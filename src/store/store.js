@@ -1,14 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
-import loginFunc from './login';
-import signupFunc from './signup';
-import hamFunc from './hamburger'
+import { configureStore } from "@reduxjs/toolkit";
+import { ham, login, signup } from ".";
 
 const store = configureStore({
     reducer: {
-        login: loginFunc.reducer,
-        signup: signupFunc.reducer,
-        hamburger: hamFunc.reducer
+        login: login.func.reducer,
+        signup: signup.func.reducer,
+        hamburger: ham.func.reducer,
     },
 });
 
-export default store
+export default store;

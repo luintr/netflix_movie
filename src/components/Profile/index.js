@@ -1,14 +1,14 @@
 import { useDispatch } from "react-redux";
 
 import { Avatar, Dropdown } from "antd";
-import { loginActions } from "../../store/login";
+import { login } from "../../store";
 
 const Profile = () => {
     const dispatch = useDispatch();
 
     const logoutAct = () => {
-        dispatch(loginActions.changeForm());
-        dispatch(loginActions.isLogin());
+        dispatch(login.actions.changeForm());
+        dispatch(login.actions.isLogin());
         localStorage.removeItem("user");
     };
 

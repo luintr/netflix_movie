@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+import { ham, login } from "../../../../store";
+
 import { NetflixLogo } from "../../../../assets/icon";
 import { Avatar } from "antd";
-import { loginActions } from "../../../../store/login";
 import ModeEditRoundedIcon from "@mui/icons-material/ModeEditRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
-import { hamActions } from "../../../../store/hamburger";
+import { LINKS } from "../../../../constant";
 
 const NavMobile = () => {
     const navigate = useNavigate();
@@ -28,9 +29,9 @@ const NavMobile = () => {
     }, [loginState]);
 
     const LogoutHandler = () => {
-        dispatch(loginActions.isLogin());
-        dispatch(loginActions.setFormStateTrue());
-        dispatch(hamActions.isActive());
+        dispatch(login.actions.isLogin());
+        dispatch(login.actions.setFormStateTrue());
+        dispatch(ham.actions.isActive());
         localStorage.removeItem("user");
         navigate("/auth");
     };
@@ -42,8 +43,8 @@ const NavMobile = () => {
                     className="btn"
                     onClick={() => {
                         navigate("/auth");
-                        dispatch(loginActions.setFormStateTrue());
-                        dispatch(hamActions.isActive());
+                        dispatch(login.actions.setFormStateTrue());
+                        dispatch(ham.actions.isActive());
                     }}
                 >
                     <span>Sign In</span>
@@ -53,9 +54,9 @@ const NavMobile = () => {
                     className="btn"
                     onClick={() => {
                         navigate("/auth");
-                        dispatch(loginActions.setLoginFalse());
-                        dispatch(loginActions.setFormStateFalse());
-                        dispatch(hamActions.isActive());
+                        dispatch(login.actions.setLoginFalse());
+                        dispatch(login.actions.setFormStateFalse());
+                        dispatch(ham.actions.isActive());
                     }}
                 >
                     <span>Sign Up</span>
@@ -65,7 +66,7 @@ const NavMobile = () => {
     };
 
     const offNav = () => {
-        dispatch(hamActions.isActive());
+        dispatch(ham.actions.isActive());
     };
 
     return (
@@ -75,7 +76,7 @@ const NavMobile = () => {
                     className="logo"
                     onClick={() => {
                         navigate("/movie");
-                        dispatch(hamActions.isActive());
+                        dispatch(ham.actions.isActive());
                     }}
                 >
                     <NetflixLogo />
@@ -113,24 +114,17 @@ const NavMobile = () => {
                 </div>
 
                 <div className="navList">
-                    <Link
-                        to="movie"
-                        onClick={offNav}
-                    >
-                        Movie
-                    </Link>
-                    <Link
-                        to="tv"
-                        onClick={offNav}
-                    >
-                        TV Show
-                    </Link>
-                    <Link
-                        to="search"
-                        onClick={offNav}
-                    >
-                        Search
-                    </Link>
+                    {LINKS.HEADER.forEach((item) => {
+                        return (
+                            <Link
+                                key={item.id}
+                                to={item.link}
+                                onClick={offNav}
+                            >
+                                {item.title}
+                            </Link>
+                        );
+                    })}
                 </div>
             </div>
         </div>
