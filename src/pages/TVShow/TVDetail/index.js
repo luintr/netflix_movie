@@ -19,16 +19,16 @@ const TVDetail = () => {
     const { tvID } = useParams();
     const [detailData, setDetailData] = useState("");
 
-    const detailAPI = async () => {
-        try {
-            const detailResponse = await apiServices.getDetailTVShow(tvID);
-            if (detailResponse) setDetailData(detailResponse);
-        } catch (err) {
-            throw new Error(err);
-        }
-    };
-
     useEffect(() => {
+        const detailAPI = async () => {
+            try {
+                const detailResponse = await apiServices.getDetailTVShow(tvID);
+                if (detailResponse) setDetailData(detailResponse);
+            } catch (err) {
+                throw new Error(err);
+            }
+        };
+
         detailAPI();
     }, [tvID]);
 

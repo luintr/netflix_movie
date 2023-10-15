@@ -12,27 +12,27 @@ const Search = () => {
     const filterDebounce = useDebounce(filter, 300);
     const [data, setData] = useState([]);
 
-    const searchQuery = { params: { api_key: process.env.REACT_APP_MOVIE_API_KEY, query: `${filterDebounce}` } };
-
-    const fetchMovie = async () => {
-        try {
-            const apiResponse = await apiServices.getMovie("popular");
-            if (apiResponse) setData(apiResponse.results);
-        } catch (err) {
-            throw new Error(err);
-        }
-    };
-
-    const fetchSearchMovie = async () => {
-        try {
-            const apiResponse = await apiServices.seachMovie("movie", searchQuery);
-            if (apiResponse) setData(apiResponse.results);
-        } catch (err) {
-            throw new Error(err);
-        }
-    };
-
     useEffect(() => {
+        const searchQuery = { params: { api_key: process.env.REACT_APP_MOVIE_API_KEY, query: `${filterDebounce}` } };
+
+        const fetchMovie = async () => {
+            try {
+                const apiResponse = await apiServices.getMovie("popular");
+                if (apiResponse) setData(apiResponse.results);
+            } catch (err) {
+                throw new Error(err);
+            }
+        };
+
+        const fetchSearchMovie = async () => {
+            try {
+                const apiResponse = await apiServices.seachMovie("movie", searchQuery);
+                if (apiResponse) setData(apiResponse.results);
+            } catch (err) {
+                throw new Error(err);
+            }
+        };
+
         if (filterDebounce) {
             fetchSearchMovie();
         } else {

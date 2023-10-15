@@ -1,30 +1,28 @@
 import "./styles.scss";
 import React from "react";
 
-import dataAccor from "./dataAccor";
+import { CONTENT } from "../../constant";
 import { Collapse } from "antd";
+import Section from "../Section";
 
 const Accordion = () => {
     const { Panel } = Collapse;
 
     return (
-        <React.Fragment>
-            <div className="separate"></div>
+        <Section>
             <div className="accordion">
-                <div className="container">
-                    <Collapse accordion>
-                        {dataAccor.map((data) => (
-                            <Panel
-                                header={data.question}
-                                key={data.id}
-                            >
-                                <p>{data.answer}</p>
-                            </Panel>
-                        ))}
-                    </Collapse>{" "}
-                </div>
+                <Collapse accordion>
+                    {CONTENT.HOME.map((data) => (
+                        <Panel
+                            header={data.question}
+                            key={data.id}
+                        >
+                            <p>{data.answer}</p>
+                        </Panel>
+                    ))}
+                </Collapse>
             </div>
-        </React.Fragment>
+        </Section>
     );
 };
 

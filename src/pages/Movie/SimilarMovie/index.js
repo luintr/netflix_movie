@@ -13,16 +13,16 @@ import MovieItem from "../MovieItem";
 const SimilarMovie = ({ id }) => {
     const [similarList, getSimilarList] = useState([]);
 
-    const getSimilar = async () => {
-        try {
-            const responseSimilar = await apiService.getSimilar(id);
-            if (responseSimilar) getSimilarList(responseSimilar.results);
-        } catch (err) {
-            throw new Error(err);
-        }
-    };
-
     useEffect(() => {
+        const getSimilar = async () => {
+            try {
+                const responseSimilar = await apiService.getSimilar(id);
+                if (responseSimilar) getSimilarList(responseSimilar.results);
+            } catch (err) {
+                throw new Error(err);
+            }
+        };
+
         getSimilar();
     }, [id]);
 

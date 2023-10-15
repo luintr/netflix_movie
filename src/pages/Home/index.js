@@ -77,7 +77,7 @@ const Homepage = (props) => {
                 content="Send kids on adventures with their favorite characters in a space made just for them—free with your membership."
                 img={ImageKid}
                 flex="reverse"
-            ></Section>
+            />
 
             <Accordion />
         </React.Fragment>

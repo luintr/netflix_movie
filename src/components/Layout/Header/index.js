@@ -30,7 +30,7 @@ const Header = () => {
         if (valueLogin) {
             dispatch(loginActions.setLoginTrue());
         }
-    }, []);
+    }, [valueLogin, dispatch]);
 
     const AuthButtons = (props) => {
         return (

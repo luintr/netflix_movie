@@ -13,18 +13,18 @@ import MovieItem from "../MovieItem";
 const MovieList = ({ type }) => {
     const [dataRes, setDataRes] = useState([]);
 
-    const apiResults = async () => {
-        try {
-            const responseData = await apiService.getMovie(type);
-            setDataRes(responseData.results);
-        } catch (err) {
-            throw new Error(err);
-        }
-    };
-
     useEffect(() => {
+        const apiResults = async () => {
+            try {
+                const responseData = await apiService.getMovie(type);
+                setDataRes(responseData.results);
+            } catch (err) {
+                throw new Error(err);
+            }
+        };
+
         apiResults();
-    }, []);
+    }, [type]);
 
     return (
         <Swiper

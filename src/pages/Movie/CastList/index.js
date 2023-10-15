@@ -9,12 +9,12 @@ import NoImg from "../../../assets/img/No-Image-Placeholder.png";
 const CastList = ({ id }) => {
     const [cast, setCast] = useState([]);
 
-    const creditResult = async () => {
-        const responseCredits = await apiServices.getCredits(id);
-        setCast(responseCredits.cast);
-    };
-
     useEffect(() => {
+        const creditResult = async () => {
+            const responseCredits = await apiServices.getCredits(id);
+            setCast(responseCredits.cast);
+        };
+
         creditResult();
     }, [id]);
 

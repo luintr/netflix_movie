@@ -18,7 +18,8 @@
         position: relative;
         @include flex(center, center);
         gap: 2rem;
-        padding: 7.2rem 0;
+        padding-top: 7.2rem;
+        padding-bottom: 7.2rem;
 
         &.reverse {
             flex-direction: row-reverse;
@@ -26,6 +27,10 @@
 
         .content-box {
             flex: 1;
+
+            @include sm {
+                text-align: center;
+            }
 
             h2 {
                 font-size: var(--h2-fs);
@@ -43,7 +48,7 @@
         .video-tv-box {
             position: relative;
             z-index: 10;
-            width: 45%;
+            flex: 1;
 
             .image {
                 position: relative;
@@ -123,7 +128,6 @@
                 }
 
                 video {
-                    width: 75%;
                     height: 60%;
                 }
             }
@@ -131,10 +135,12 @@
 
         @include sm {
             flex-direction: column !important;
-            padding: 5rem 0;
+            flex-flow: column;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
 
             .video-tv-box {
-                width: 80%;
+                width: 100%;
             }
         }
     }

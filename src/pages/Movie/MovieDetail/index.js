@@ -18,21 +18,21 @@ const MovieDetail = (props) => {
     const [trailer, setTrailer] = useState();
     const navigate = useNavigate();
 
-    const detailResult = async () => {
-        try {
-            const responseDetail = await apiService.getDetail(movieID);
-            if (responseDetail) setDetail(responseDetail);
-        } catch (err) {
-            throw new Error(err);
-        }
-    };
-
-    const trailerResult = async () => {
-        const responseTrailer = await apiService.getVideos(movieID);
-        setTrailer(responseTrailer.results[0].key);
-    };
-
     useEffect(() => {
+        const detailResult = async () => {
+            try {
+                const responseDetail = await apiService.getDetail(movieID);
+                if (responseDetail) setDetail(responseDetail);
+            } catch (err) {
+                throw new Error(err);
+            }
+        };
+
+        const trailerResult = async () => {
+            const responseTrailer = await apiService.getVideos(movieID);
+            setTrailer(responseTrailer.results[0].key);
+        };
+
         detailResult();
         trailerResult();
     }, [movieID]);
