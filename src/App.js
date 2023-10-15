@@ -1,14 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Homepage from "./pages/Index/Index";
-import Layout from "./components/Layout/Layout";
-import Movie from "./pages/Movie/Movie";
-import AuthPage from "./pages/AuthPage/AuthPage";
-import MovieDetail from "./pages/Movie/MovieDetail/MovieDetail";
-import TVShow from "./pages/TVShow/TVShow";
-import Watch from "./pages/Watch/Watch";
-import Search from "./pages/Search/Search";
-import TVDetail from "./pages/TVShow/TVDetail/TVDetail";
+import Layout from "./components/Layout";
+
+import { Auth as AuthPage, Home, Movie, MovieDetail, Search, TVDetail, TVShow, Watch } from "./pages";
 
 function App() {
     return (
@@ -21,7 +15,7 @@ function App() {
                     <Route
                         index
                         path="/"
-                        element={<Homepage />}
+                        element={<Home />}
                     />
                     <Route
                         path="/search"
