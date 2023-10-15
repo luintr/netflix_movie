@@ -1,0 +1,147 @@
+@import "../../styles/global.scss";
+
+.section {
+    position: relative;
+    background-color: $black-cl;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0.8rem;
+        background-color: $gray-cl;
+    }
+
+    .inner {
+        position: relative;
+        @include flex(center, center);
+        gap: 2rem;
+        padding-top: 7.2rem;
+        padding-bottom: 7.2rem;
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .content-box {
+            flex: 1;
+
+            @include sm {
+                text-align: center;
+            }
+
+            h2 {
+                font-size: var(--h2-fs);
+                line-height: var(--h2-lh);
+                margin-bottom: 2rem;
+                font-weight: 800;
+            }
+
+            p {
+                font-size: var(--body20-fs);
+                line-height: var(--body20-lh);
+            }
+        }
+
+        .video-tv-box {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+
+            .image {
+                position: relative;
+                width: 60%;
+                height: 8rem;
+                border-radius: 1rem;
+                border: solid 0.2rem $gray-cl;
+                background-color: $black-cl;
+                position: absolute;
+                top: calc(90% - 8rem);
+                left: 50%;
+                transform: translateX(-50%);
+
+                .main-img {
+                    position: absolute;
+                    top: 0.5rem;
+                    left: 0.5rem;
+                    bottom: 0.5rem;
+                    height: 7rem;
+                }
+
+                .image-center {
+                    margin: 0 auto;
+                    width: calc(100% - 14rem);
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 0.2rem;
+
+                    p {
+                        font-weight: bold;
+                        font-size: 1.8rem;
+                        line-height: 1.8rem;
+                    }
+
+                    span {
+                        color: blue;
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .down-img {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 0.5rem;
+                    bottom: 1.5rem;
+                    height: 5rem;
+                }
+            }
+
+            .video-tv {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &.video-tv2 {
+                    position: absolute;
+                    top: 35%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: -1;
+                    width: 100%;
+                    width: 60%;
+
+                    video {
+                        width: 90%;
+                        height: 90%;
+                    }
+                }
+
+                video {
+                    height: 60%;
+                }
+            }
+        }
+
+        @include sm {
+            flex-direction: column !important;
+            flex-flow: column;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+
+            .video-tv-box {
+                width: 100%;
+            }
+        }
+    }
+}

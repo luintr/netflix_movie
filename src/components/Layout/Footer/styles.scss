@@ -1,0 +1,49 @@
+@import "../../../styles/global.scss";
+
+#footer {
+    background-color: $black-cl;
+
+    .inner {
+        background-color: $black-cl;
+        padding-top: 7.2rem;
+        padding-bottom: 7.2rem;
+        display: flex;
+        gap: 5rem;
+
+        .logoFooter {
+            width: 20rem;
+
+            img {
+                @include size(100%, auto);
+            }
+        }
+
+        .footer-items-list {
+            display: flex;
+            gap: 3rem;
+
+            .footer-item {
+                cursor: pointer;
+                height: fit-content;
+                transition: 0.2s all ease-in-out;
+
+                &:hover {
+                    color: $err-cl;
+                }
+            }
+        }
+
+        @include sm {
+            .logoFooter {
+                width: 30%;
+            }
+
+            .footer-items-list {
+                width: calc(60% - 5rem);
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+    }
+}

@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const loginFunc = createSlice({
-    name: 'login',
+const func = createSlice({
+    name: "login",
     initialState: {
         loginState: false,
         formState: false,
-        editForm: false
+        editForm: false,
     },
     reducers: {
         isLogin(state) {
@@ -17,27 +17,30 @@ const loginFunc = createSlice({
         },
 
         setLoginTrue(state) {
-            state.loginState = true
+            state.loginState = true;
         },
 
         setLoginFalse(state) {
-            state.loginState = false
+            state.loginState = false;
         },
 
         setFormStateTrue(state) {
-            state.formState = true
+            state.formState = true;
         },
 
         setFormStateFalse(state) {
-            state.formState = false
+            state.formState = false;
         },
 
         changeForm(state) {
             state.formState = !state.formState;
         },
-    }
-})
+    },
+});
 
-export const loginActions = loginFunc.actions
+const login = {
+    func,
+    actions: func.actions,
+};
 
-export default loginFunc
+export default login;

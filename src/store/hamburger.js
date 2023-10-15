@@ -1,17 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const hamFunc = createSlice({
-    name: 'hamburger',
+const func = createSlice({
+    name: "hamburger",
     initialState: {
-        isOpen: false
+        isOpen: false,
     },
     reducers: {
         isActive(state) {
-            state.isOpen = !state.isOpen
-        }
-    }
-})
+            state.isOpen = !state.isOpen;
+        },
+    },
+});
 
-export const hamActions = hamFunc.actions
+const ham = {
+    func,
+    actions: func.actions,
+};
 
-export default hamFunc
+export default ham;

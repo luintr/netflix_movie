@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// API KEY: d0df8b7fb0eb66ce03855cb6448b4845
-// API REQUEST: https://api.themoviedb.org/3/movie/550?api_key=d0df8b7fb0eb66ce03855cb6448b4845
-// REACT_APP_MOVIE_API_KEY = d0df8b7fb0eb66ce03855cb6448b4845
+// API KEY: fb8ea5fc661d9d45989dd05c8adeaea5
+// API REQUEST: https://api.themoviedb.org/3/movie/550?api_key=fb8ea5fc661d9d45989dd05c8adeaea5
+// REACT_APP_MOVIE_API_KEY = fb8ea5fc661d9d45989dd05c8adeaea5
 
 const moviedb = { params: { api_key: process.env.REACT_APP_MOVIE_API_KEY } };
 
@@ -34,4 +34,4 @@ export const putUser = async (type, data) => {
     return putUsers;
 };
 
-// export default request
+export default request;
