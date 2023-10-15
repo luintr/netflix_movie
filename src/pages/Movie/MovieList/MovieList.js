@@ -17,8 +17,8 @@ const MovieList = ({ type }) => {
         try {
             const responseData = await apiService.getMovie(type);
             setDataRes(responseData.results);
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+            throw new Error(err);
         }
     };
 

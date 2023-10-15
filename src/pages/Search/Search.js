@@ -19,7 +19,7 @@ const Search = () => {
             const apiResponse = await apiServices.getMovie("popular");
             if (apiResponse) setData(apiResponse.results);
         } catch (err) {
-            console.log(err);
+            throw new Error(err);
         }
     };
 
@@ -28,7 +28,7 @@ const Search = () => {
             const apiResponse = await apiServices.seachMovie("movie", searchQuery);
             if (apiResponse) setData(apiResponse.results);
         } catch (err) {
-            console.log(err);
+            throw new Error(err);
         }
     };
 

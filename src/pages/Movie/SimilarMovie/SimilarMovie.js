@@ -18,7 +18,7 @@ const SimilarMovie = ({ id }) => {
             const responseSimilar = await apiService.getSimilar(id);
             if (responseSimilar) getSimilarList(responseSimilar.results);
         } catch (err) {
-            console.log(err);
+            throw new Error(err);
         }
     };
 

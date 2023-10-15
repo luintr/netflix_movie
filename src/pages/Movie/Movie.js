@@ -19,12 +19,13 @@ const Movie = (props) => {
 
     const apiResults = async () => {
         setIsLoading(true);
+
         try {
             const responsePopular = await apiService.getMovie("upcoming");
             const responseDetail = await apiService.getDetail(responsePopular.results[0].id);
             setBannerLink(responseDetail);
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+            throw new Error(err);
         } finally {
             setIsLoading(false);
         }

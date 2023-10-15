@@ -24,14 +24,13 @@ const TVDetail = () => {
             const detailResponse = await apiServices.getDetailTVShow(tvID);
             if (detailResponse) setDetailData(detailResponse);
         } catch (err) {
-            console.log(err);
+            throw new Error(err);
         }
     };
 
     useEffect(() => {
         detailAPI();
     }, [tvID]);
-    console.log(detailData);
 
     if (!detailData) return null;
     const {

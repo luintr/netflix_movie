@@ -23,7 +23,7 @@ const MovieDetail = (props) => {
             const responseDetail = await apiService.getDetail(movieID);
             if (responseDetail) setDetail(responseDetail);
         } catch (err) {
-            console.log(err);
+            throw new Error(err);
         }
     };
 
