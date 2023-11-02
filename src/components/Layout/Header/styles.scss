@@ -1,91 +1,91 @@
 @import "../../../styles/global.scss";
 
 #header {
-    .inner {
-        @include flex(center, space-between);
-        height: 8rem;
-        padding: 1rem 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 2;
-        z-index: 99;
+  .inner {
+    @include flex(center, space-between);
+    height: 8rem;
+    padding: 1rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    z-index: 99;
 
-        .left {
-            display: flex;
-            align-items: center;
-            gap: 30px;
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
 
-            .logo {
-                display: inline-block;
-                width: 15rem;
+      .logo {
+        display: inline-block;
+        width: 15rem;
 
-                img {
-                    width: 100%;
-                    height: auto;
-                }
-            }
-
-            .nav {
-                display: flex;
-                gap: 20px;
-
-                a {
-                    transition: 0.2s ease-in-out;
-
-                    &:hover {
-                        color: $err-cl;
-                    }
-                }
-
-                @include sm {
-                    display: none;
-                }
-            }
+        img {
+          width: 100%;
+          height: auto;
         }
+      }
 
-        .right {
-            @include flex(center, center);
-            gap: 20px;
+      .nav {
+        display: flex;
+        gap: 20px;
 
-            .btn {
-                border: none;
-                outline: none;
-                background-color: $red-cl;
-                padding: 0.4rem 1.6rem;
-                border-radius: 5px;
-                font-weight: 600;
-                color: $white-cl;
-                cursor: pointer;
-                transition: 0.2s all ease-in-out;
+        a {
+          transition: 0.2s ease-in-out;
 
-                &:hover {
-                    opacity: 0.8;
-                }
-            }
-
-            @include sm {
-                display: none;
-            }
-        }
-
-        .hamburger {
-            display: none;
-            filter: brightness(0) invert(1);
-
-            @include sm {
-                display: inline-block;
-                position: fixed;
-                top: 2%;
-                right: 0%;
-                z-index: 999;
-            }
+          &:hover {
+            color: $err-cl;
+          }
         }
 
         @include sm {
-            padding-top: 6%;
-            height: unset;
+          display: none;
         }
+      }
     }
+
+    .right {
+      @include flex(center, center);
+      gap: 20px;
+
+      .btn {
+        border: none;
+        outline: none;
+        background-color: $red-cl;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        font-weight: 600;
+        color: $white-cl;
+        cursor: pointer;
+        transition: 0.2s all ease-in-out;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+
+    .hamburger {
+      display: none;
+      filter: brightness(0) invert(1);
+
+      @include sm {
+        display: inline-block;
+        position: fixed;
+        top: 2%;
+        right: 0%;
+        z-index: 999;
+      }
+    }
+
+    @include sm {
+      padding-top: 6%;
+      height: unset;
+    }
+  }
 }
